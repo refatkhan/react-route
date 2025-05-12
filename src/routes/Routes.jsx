@@ -1,26 +1,31 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../MainLayout";
-import Favourite from "../Favourite";
-
+import About from "../pages/About";
+import Favorites from "../pages/Favorites";
+import PhoneDetails from "../pages/PhoneDetails";
+import ErrorPage from "../pages/ErrorPage";
 export const router = createBrowserRouter([
     //default route jokhon kew visit korbe eita show korbe
     {
         index: true,
         Component: MainLayout,
-        errorElement: <p>There is no element in this route</p>
+        errorElement: <ErrorPage />
     },
     {
         path: "/",
         Component: MainLayout,
         children: [
             {
-                path: "/favourite",
-                Component: Favourite,
+                path: "/favorite",
+                Component: <Favorites />
             }
         ]
     },
     {
         path: "/about",
-        element: <p>This is about </p>
+        Component: About
+    }, {
+        path: "/phone-details",
+        Component: <PhoneDetails />
     }
 ]);

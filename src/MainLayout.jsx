@@ -1,12 +1,10 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import Home from './pages/Home';
 
 const MainLayout = () => {
     return (
         <div>
-            <h1>THis is main</h1>
-            <Outlet/>
-            <h2>Footer </h2>
+            <Home/>
         </div>
     );
 };
